@@ -9,7 +9,12 @@ import Terminal from 'vite-plugin-terminal';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+/** Base path for asset and route resolution. Staging (GitHub Pages) uses repo path; production uses /. */
+const base = process.env.VITE_BASE_URL ?? '/solo-leveling-portfolio/';
+
 export default defineConfig({
+  base,
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any -- pnpm duplicate vite causes Plugin type mismatch
   plugins: [
     react(),
