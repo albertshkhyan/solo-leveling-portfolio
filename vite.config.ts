@@ -12,14 +12,15 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 /** Base path for asset and route resolution. Staging (GitHub Pages) uses repo path; production uses /. */
 const base = process.env.VITE_BASE_URL ?? '/solo-leveling-portfolio/';
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   base,
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any -- pnpm duplicate vite causes Plugin type mismatch
   plugins: [
     react(),
     tailwindcss(),
-    Terminal({ console: 'terminal' }),
+    // Terminal plugin is dev-only; it breaks production build (virtual module not resolved).
+    ...(command === 'serve' ? [Terminal({ console: 'terminal' })] : []),
   ] as any,
   resolve: {
     alias: {
@@ -37,4 +38,4 @@ export default defineConfig({
     setupFiles: ['./src/test/setup.ts'],
     include: ['src/**/*.{test,spec}.{ts,tsx}'],
   },
-})
+}));
