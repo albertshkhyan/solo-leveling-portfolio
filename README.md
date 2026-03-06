@@ -8,9 +8,9 @@ Solo Leveling–themed developer portfolio. React, TypeScript, Vite. Skills as s
 
 [![Solo Leveling Portfolio — full-screen screenshot of the live staging site](src/assets/albertshkhyan.github.io_solo-leveling-portfolio_full-screen.png)](https://albertshkhyan.github.io/solo-leveling-portfolio/)
 
-**Video demo**
+**Demo**
 
-<video src="src/assets/video-demo-1.mp4" controls width="720" title="Solo Leveling Portfolio — video demo"></video>
+![Solo Leveling Portfolio — animated demo](src/assets/demo-1.gif)
 
 ## Tech stack
 
