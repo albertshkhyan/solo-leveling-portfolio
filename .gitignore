@@ -51,5 +51,8 @@ coverage/
 .pnpm-store/
 .pnpm-debug.log
 
+# Large media (use GIF or host elsewhere; GitHub limit 100 MB)
+src/assets/video-demo-1.mp4
+
 # Misc
 *.pem
